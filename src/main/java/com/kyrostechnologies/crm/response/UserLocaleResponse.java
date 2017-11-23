@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ public class UserLocaleResponse {
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("UserLocaleList")
-	private ArrayList<UserLocaleModel>userLocaleList=new ArrayList<UserLocaleModel>();
+	private List<UserLocaleModel>userLocaleList=new ArrayList<UserLocaleModel>();
 public UserLocaleResponse(){
 	
 }
@@ -29,10 +30,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<UserLocaleModel> getUserLocaleList() {
+public List<UserLocaleModel> getUserLocaleList() {
 	return userLocaleList;
 }
-public void setUserLocaleList(ArrayList<UserLocaleModel> userLocaleList) {
+public void setUserLocaleList(List<UserLocaleModel> userLocaleList) {
 	this.userLocaleList = userLocaleList;
 }
 

@@ -4,10 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="settings.userlocale")
 public class UserLocaleModel implements Serializable{
 	private static final long serialVersionUID = 1L;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 @JsonProperty("UserLocaleId")
 private int userLocaleId;
 @JsonProperty("LocaleCode")

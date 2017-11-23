@@ -1,4 +1,4 @@
-package com.kyrostechnologies.crm.language.datatier;
+package com.kyrostechnologies.crm.application.language.datatier;
 
 import com.kyrostechnologies.crm.dbconstants.LanguageDBConstants;
 import com.kyrostechnologies.crm.model.LanguageModel;

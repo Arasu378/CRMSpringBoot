@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("UserInterfaceList")
-private ArrayList<UserInterfaceModel>userInterfaceList= new ArrayList<UserInterfaceModel>();
+private List<UserInterfaceModel> userInterfaceList= new ArrayList<UserInterfaceModel>();
 public UserInterfaceResponse(){
 	
 }
@@ -29,10 +30,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<UserInterfaceModel> getUserInterfaceList() {
+public List<UserInterfaceModel> getUserInterfaceList() {
 	return userInterfaceList;
 }
-public void setUserInterfaceList(ArrayList<UserInterfaceModel> userInterfaceList) {
+public void setUserInterfaceList(List<UserInterfaceModel> userInterfaceList) {
 	this.userInterfaceList = userInterfaceList;
 }
 

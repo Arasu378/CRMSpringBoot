@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("PipeLineList")
-private ArrayList<PipeLineModel>pipeLineList=new ArrayList<PipeLineModel>();
+private List<PipeLineModel> pipeLineList=new ArrayList<PipeLineModel>();
 public PipeLineResponse(){
 	
 }
@@ -29,10 +30,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<PipeLineModel> getPipeLineList() {
+public List<PipeLineModel> getPipeLineList() {
 	return pipeLineList;
 }
-public void setPipeLineList(ArrayList<PipeLineModel> pipeLineList) {
+public void setPipeLineList(List<PipeLineModel> pipeLineList) {
 	this.pipeLineList = pipeLineList;
 }
 

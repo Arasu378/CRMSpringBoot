@@ -36,16 +36,12 @@ public class LanguageBusinessLogic implements LanguageInterface {
         String query="CALL `Settings.Language_GetLanguage`();";
         System.out.println("Query : "+query);
         List<LanguageModel>languageModelList= namedParameterJdbcTemplate.query(query, getSqlParameterSource(null,"GET"),new LanguageDataTier());
-        for(LanguageModel model:languageModelList){
-            System.out.println("Language : "+model.getLanguageName());
-        }
-
-        if(languageModelList!=null && languageModelList.size()!=0){
+           if(languageModelList!=null && languageModelList.size()!=0){
             return getLanguageResponse(true,"Success",languageModelList);
-        }else{
+        }
             return getLanguageResponse(false,"list size is zero or null!",null);
 
-        }
+
 
      }
 
@@ -62,9 +58,9 @@ public class LanguageBusinessLogic implements LanguageInterface {
         });
      if(isInserted==1){
          return getLanguageList();
-     }else{
-         return getLanguageResponse(false,"Language is not inserted",null);
      }
+         return getLanguageResponse(false,"Language is not inserted",null);
+
 
 
 
@@ -90,9 +86,9 @@ public class LanguageBusinessLogic implements LanguageInterface {
         });
        if(isUpdated==1){
            return getLanguageList();
-       }else{
-           return getLanguageResponse(false,"Language is not updated",null);
        }
+           return getLanguageResponse(false,"Language is not updated",null);
+
 
 
     }
@@ -109,9 +105,9 @@ public class LanguageBusinessLogic implements LanguageInterface {
         });
         if(isDeleted==1){
             return getLanguageList();
-        }else{
-            return getLanguageResponse(false,"Language is not deleted",null);
         }
+            return getLanguageResponse(false,"Language is not deleted",null);
+
 
     }
 

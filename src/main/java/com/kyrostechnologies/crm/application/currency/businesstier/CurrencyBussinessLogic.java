@@ -30,16 +30,12 @@ public class CurrencyBussinessLogic implements CurrencyInterface {
         String query="CALL `Settings.Currency_GetCurrency`();";
         System.out.println("Query : "+query);
         List<CurrencyModel>currencyModelList= namedParameterJdbcTemplate.query(query, new MapSqlParameterSource(),new CurrencyDataTier());
-        for(CurrencyModel model:currencyModelList){
-            System.out.println("Language : "+model.getCurrencyName());
-        }
-
-        if(currencyModelList!=null && currencyModelList.size()!=0){
+            if(currencyModelList!=null && currencyModelList.size()!=0){
             return getCurrencyResponse(true,"Success",currencyModelList);
-        }else{
+        }
             return getCurrencyResponse(false,"list size is zero or null!",null);
 
-        }
+
     }
 
     @Override
@@ -55,9 +51,9 @@ public class CurrencyBussinessLogic implements CurrencyInterface {
         });
         if(isInserted==1){
             return getCurrencyList();
-        }else{
-            return getCurrencyResponse(false,"Currency is not inserted",null);
         }
+            return getCurrencyResponse(false,"Currency is not inserted",null);
+
 
     }
 
@@ -79,9 +75,9 @@ public class CurrencyBussinessLogic implements CurrencyInterface {
         });
         if(isUpdated==1){
             return getCurrencyList();
-        }else{
-            return getCurrencyResponse(false,"Currency is not updated",null);
         }
+            return getCurrencyResponse(false,"Currency is not updated",null);
+
 
     }
 
@@ -97,9 +93,9 @@ public class CurrencyBussinessLogic implements CurrencyInterface {
         });
         if(isDeleted==1){
             return getCurrencyList();
-        }else{
-            return getCurrencyResponse(false,"Currency is not updated",null);
         }
+        return getCurrencyResponse(false,"Currency is not updated",null);
+
 
     }
 

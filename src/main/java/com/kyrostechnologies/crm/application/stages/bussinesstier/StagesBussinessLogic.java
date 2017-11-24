@@ -33,14 +33,10 @@ public class StagesBussinessLogic  implements StagesInterface{
         String query="CALL `Settings.Stages_GetStageByStageId`("+StageId+")";
         System.out.println("Query : "+query);
         List<StagesModel>stagesModelList=namedParameterJdbcTemplate.query(query,new MapSqlParameterSource(),new StagesDataTier());
-        for(StagesModel model:stagesModelList){
-            System.out.println(""+model.getName());
-        }
         if(stagesModelList!=null&&stagesModelList.size()!=0){
             return getStagesResponse(true,"Success",stagesModelList);
-        }else{
-            return getStagesResponse(false,"Stages List is Empty or null!",null);
         }
+            return getStagesResponse(false,"Stages List is Empty or null!",null);
 
     }
 
@@ -49,14 +45,11 @@ public class StagesBussinessLogic  implements StagesInterface{
         String query="CALL `Settings.Stages_GetStagesByPipeLineId`("+PipeLineId+")";
         System.out.println("Query : "+query);
         List<StagesModel>stagesModelList=namedParameterJdbcTemplate.query(query,new MapSqlParameterSource(),new StagesDataTier());
-        for(StagesModel model:stagesModelList){
-            System.out.println(""+model.getName());
-        }
         if(stagesModelList!=null&&stagesModelList.size()!=0){
             return getStagesResponse(true,"Success",stagesModelList);
-        }else{
-            return getStagesResponse(false,"Stages List is Empty or null!",null);
         }
+            return getStagesResponse(false,"Stages List is Empty or null!",null);
+
     }
 
     @Override
@@ -77,9 +70,9 @@ public class StagesBussinessLogic  implements StagesInterface{
         });
         if(isInserted!=0){
             return getStagesByPipeLineId(model.getPipeLineId());
-        }else{
-            return getStagesResponse(false,"Stages is not inserted",null);
         }
+            return getStagesResponse(false,"Stages is not inserted",null);
+
     }
 
     @Override
@@ -106,9 +99,9 @@ public class StagesBussinessLogic  implements StagesInterface{
         });
         if(isUpdated!=0){
             return getStagesByPipeLineId(model.getPipeLineId());
-        }else{
-            return getStagesResponse(false,"Stages is not updated",null);
         }
+            return getStagesResponse(false,"Stages is not updated",null);
+
     }
 
     @Override
@@ -123,9 +116,9 @@ public class StagesBussinessLogic  implements StagesInterface{
         });
         if(isDeleted!=0){
             return getStagesByPipeLineId(model.getPipeLineId());
-        }else{
-            return getStagesResponse(false,"Stages is not deleted",null);
         }
+            return getStagesResponse(false,"Stages is not deleted",null);
+
     }
     private StagesResponse getStagesResponse(boolean success,String message,List<StagesModel>stagesModelList){
         StagesResponse response=new StagesResponse();

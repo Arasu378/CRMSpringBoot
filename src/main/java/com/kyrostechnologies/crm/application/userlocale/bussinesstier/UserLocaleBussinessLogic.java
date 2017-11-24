@@ -31,16 +31,12 @@ public class UserLocaleBussinessLogic implements UserLocaleInterface {
         String query="CALL `Settings.UserLocale_GetUserLocale`();";
         System.out.println("Query : "+query);
         List<UserLocaleModel>userLocaleModelList= namedParameterJdbcTemplate.query(query, new MapSqlParameterSource(),new UserLocaleDataTier());
-        for(UserLocaleModel model:userLocaleModelList){
-            System.out.println("Language : "+model.getUserLocale());
-        }
-
         if(userLocaleModelList!=null && userLocaleModelList.size()!=0){
             return getUserLocaleResponse(true,"Success",userLocaleModelList);
-        }else{
+        }
             return getUserLocaleResponse(false,"list size is zero or null!",null);
 
-        }
+
     }
 
     @Override
@@ -56,9 +52,9 @@ public class UserLocaleBussinessLogic implements UserLocaleInterface {
         });
         if(isInserted==1){
             return getUserLocale();
-        }else{
-            return getUserLocaleResponse(false,"UserLocale is not inserted",null);
         }
+            return getUserLocaleResponse(false,"UserLocale is not inserted",null);
+
 
     }
 
@@ -82,9 +78,9 @@ public class UserLocaleBussinessLogic implements UserLocaleInterface {
         });
         if(isUpdated==1){
             return getUserLocale();
-        }else{
-            return getUserLocaleResponse(false,"UserLocale is not updated",null);
         }
+            return getUserLocaleResponse(false,"UserLocale is not updated",null);
+
 
     }
 
@@ -100,9 +96,9 @@ public class UserLocaleBussinessLogic implements UserLocaleInterface {
         });
         if(isDeleted==1){
             return getUserLocale();
-        }else{
-            return getUserLocaleResponse(false,"UserLocale is not Deleted",null);
         }
+            return getUserLocaleResponse(false,"UserLocale is not Deleted",null);
+
     }
     private UserLocaleResponse getUserLocaleResponse(boolean success, String message, List<UserLocaleModel> userLocaleModelList){
         UserLocaleResponse response=new UserLocaleResponse();

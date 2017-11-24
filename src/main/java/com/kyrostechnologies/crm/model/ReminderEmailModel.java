@@ -2,9 +2,13 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name = "usersettins.reminderemails")
 public class ReminderEmailModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("ReminderEmailId")
 private int reminderEmailId;
 	@JsonProperty("UserProfileId")

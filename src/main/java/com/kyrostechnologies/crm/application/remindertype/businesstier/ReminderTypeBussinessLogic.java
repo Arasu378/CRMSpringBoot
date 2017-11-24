@@ -31,16 +31,12 @@ public class ReminderTypeBussinessLogic implements ReminderTypeInterface {
         String query="CALL  `Settings.ReminderType_GetReminderType`();";
         System.out.println("Query : "+query);
         List<ReminderTypeModel>reminderTypeModelList= namedParameterJdbcTemplate.query(query, new MapSqlParameterSource(),new ReminderTypeDataTier());
-        for(ReminderTypeModel model:reminderTypeModelList){
-            System.out.println("Language : "+model.getReminderTypeName());
-        }
-
-        if(reminderTypeModelList!=null && reminderTypeModelList.size()!=0){
+         if(reminderTypeModelList!=null && reminderTypeModelList.size()!=0){
             return getReminderTypeResponse(true,"Success",reminderTypeModelList);
-        }else{
+        }
             return getReminderTypeResponse(false,"list size is zero or null!",null);
 
-        }
+
 
     }
 
@@ -56,9 +52,9 @@ public class ReminderTypeBussinessLogic implements ReminderTypeInterface {
         });
         if(isInserted==1){
             return getReminderType();
-        }else{
-            return getReminderTypeResponse(false,"Reminder Type is not inserted",null);
         }
+            return getReminderTypeResponse(false,"Reminder Type is not inserted",null);
+
 
     }
 
@@ -80,9 +76,9 @@ public class ReminderTypeBussinessLogic implements ReminderTypeInterface {
         });
         if(isUpdated==1){
             return getReminderType();
-        }else{
-            return getReminderTypeResponse(false,"Reminder Type is not updated",null);
         }
+            return getReminderTypeResponse(false,"Reminder Type is not updated",null);
+
 
     }
 
@@ -98,9 +94,9 @@ public class ReminderTypeBussinessLogic implements ReminderTypeInterface {
         });
         if(isDeleted==1){
             return getReminderType();
-        }else{
-            return getReminderTypeResponse(false,"Reminder Type is not Deleted",null);
         }
+            return getReminderTypeResponse(false,"Reminder Type is not Deleted",null);
+
     }
     private ReminderTypeResponse getReminderTypeResponse(boolean success, String message, List<ReminderTypeModel> reminderTypeModelList){
         ReminderTypeResponse response=new ReminderTypeResponse();

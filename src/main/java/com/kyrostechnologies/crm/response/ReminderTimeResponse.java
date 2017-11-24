@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 @JsonProperty("Message")
 private String message;
 @JsonProperty("ReminderTime")
-private ArrayList<ReminderTimeModel>reminderTime=new ArrayList<ReminderTimeModel>();
+private List<ReminderTimeModel> reminderTime=new ArrayList<ReminderTimeModel>();
 public ReminderTimeResponse(){
 	
 }
@@ -29,10 +30,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<ReminderTimeModel> getReminderTime() {
+public List<ReminderTimeModel> getReminderTime() {
 	return reminderTime;
 }
-public void setReminderTime(ArrayList<ReminderTimeModel> reminderTime) {
+public void setReminderTime(List<ReminderTimeModel> reminderTime) {
 	this.reminderTime = reminderTime;
 }
 

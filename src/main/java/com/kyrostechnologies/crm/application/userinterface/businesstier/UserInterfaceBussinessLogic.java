@@ -34,16 +34,12 @@ public class UserInterfaceBussinessLogic implements UserInterface {
         String query="CALL  `UserSettings.UserInterface.GetUserInterfaceByUserProfileId`("+UserProfileId+");";
         System.out.println("Query : "+query);
         List<UserInterfaceModel> userInterfaceModelList= namedParameterJdbcTemplate.query(query, new MapSqlParameterSource(),new UserInterfaceDataTier());
-        for(UserInterfaceModel model:userInterfaceModelList){
-            System.out.println("UserProfileId : "+model.getUserProfileId());
-        }
-
-        if(userInterfaceModelList!=null && userInterfaceModelList.size()!=0){
+       if(userInterfaceModelList!=null && userInterfaceModelList.size()!=0){
             return getUserInterfaceResponse(true,"Success",userInterfaceModelList);
-        }else{
+        }
             return getUserInterfaceResponse(false,"list size is zero or null!",null);
 
-        }
+
 
     }
 
@@ -52,14 +48,11 @@ public class UserInterfaceBussinessLogic implements UserInterface {
         String query="CALL `UserSettings.UserInterface.GetUserInterfaceByUserInterfaceId`("+UserInterfaceId+");";
         System.out.println("Query : "+query);
         List<UserInterfaceModel> userInterfaceModelList= namedParameterJdbcTemplate.query(query, new MapSqlParameterSource(),new UserInterfaceDataTier());
-        for(UserInterfaceModel model:userInterfaceModelList){
-            System.out.println("UserProfileId : "+model.getUserProfileId());
-        }
-        if(userInterfaceModelList!=null && userInterfaceModelList.size()!=0){
+       if(userInterfaceModelList!=null && userInterfaceModelList.size()!=0){
             return getUserInterfaceResponse(true,"Success",userInterfaceModelList);
-        }else{
-            return getUserInterfaceResponse(false,"list size is zero or null!",null);
         }
+            return getUserInterfaceResponse(false,"list size is zero or null!",null);
+
 
     }
 
@@ -79,9 +72,9 @@ public class UserInterfaceBussinessLogic implements UserInterface {
         });
         if(isInserted==1){
             return getUserInterfaceByUserProfileId(model.getUserProfileId());
-        }else{
-            return getUserInterfaceResponse(false,"UserInterface is not inserted",null);
         }
+            return getUserInterfaceResponse(false,"UserInterface is not inserted",null);
+
     }
 
     @Override
@@ -105,9 +98,9 @@ public class UserInterfaceBussinessLogic implements UserInterface {
         });
         if(isInserted==1){
             return getUserInterfaceByUserProfileId(model.getUserProfileId());
-        }else{
-            return getUserInterfaceResponse(false,"UserInterface is not updated",null);
         }
+            return getUserInterfaceResponse(false,"UserInterface is not updated",null);
+
 
     }
 
@@ -123,9 +116,9 @@ public class UserInterfaceBussinessLogic implements UserInterface {
         });
         if(isInserted==1){
             return getUserInterfaceByUserProfileId(model.getUserProfileId());
-        }else{
-            return getUserInterfaceResponse(false,"UserInterface is not deleted",null);
         }
+            return getUserInterfaceResponse(false,"UserInterface is not deleted",null);
+
 
     }
     private UserInterfaceResponse getUserInterfaceResponse(boolean success, String message, List<UserInterfaceModel> userInterfaceModelList){

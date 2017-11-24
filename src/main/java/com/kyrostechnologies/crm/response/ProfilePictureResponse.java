@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("ProfilePicture")
-	private ArrayList<ProfilePictureModel>profilePicture=new ArrayList<ProfilePictureModel>();
+	private List<ProfilePictureModel>profilePicture=new ArrayList<ProfilePictureModel>();
 	public ProfilePictureResponse(){
 		
 	}
@@ -29,10 +30,10 @@ private boolean isSuccess;
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<ProfilePictureModel> getProfilePicture() {
+	public List<ProfilePictureModel> getProfilePicture() {
 		return profilePicture;
 	}
-	public void setProfilePicture(ArrayList<ProfilePictureModel> profilePicture) {
+	public void setProfilePicture(List<ProfilePictureModel> profilePicture) {
 		this.profilePicture = profilePicture;
 	}
 	

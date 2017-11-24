@@ -2,15 +2,19 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.profilepicture")
 public class ProfilePictureModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("ProfilePictureId")
 	private int profilePictureId;
 	@JsonProperty("UserProfileId")
 	private int userProfileId;
 	@JsonProperty("AttachmentId")
-	private int AttachmentId;
+	private int attachmentId;
 	public ProfilePictureModel(){
 		
 	}
@@ -27,10 +31,10 @@ public class ProfilePictureModel {
 		this.userProfileId = userProfileId;
 	}
 	public int getAttachmentId() {
-		return AttachmentId;
+		return attachmentId;
 	}
 	public void setAttachmentId(int attachmentId) {
-		AttachmentId = attachmentId;
+        this.attachmentId = attachmentId;
 	}
 	
 

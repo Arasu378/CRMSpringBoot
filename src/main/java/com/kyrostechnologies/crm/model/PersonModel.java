@@ -2,12 +2,19 @@ package com.kyrostechnologies.crm.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="usersettings.person")
 public class PersonModel implements Serializable{
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("PersonId")
 	private int personId;
 	@JsonProperty("UserName")
@@ -117,9 +124,9 @@ public class PersonModel implements Serializable{
 	@JsonProperty("ownerName")
 	private String ownerName;
 	@JsonProperty("PersonPhoneList")
-	private ArrayList<PersonPhoneModel>personPhoneList=new ArrayList<PersonPhoneModel>();
+	private List<PersonPhoneModel>personPhoneList=new ArrayList<PersonPhoneModel>();
 	@JsonProperty("PersonEmailList")
-	private ArrayList<PersonEmailModel>personEmailList=new ArrayList<PersonEmailModel>();
+	private List<PersonEmailModel>personEmailList=new ArrayList<PersonEmailModel>();
 	@JsonProperty("Label")
 	private String label;
 	@JsonProperty("Value")
@@ -156,19 +163,19 @@ public class PersonModel implements Serializable{
 		this.primary = primary;
 	}
 
-	public ArrayList<PersonPhoneModel> getPersonPhoneList() {
+	public List<PersonPhoneModel> getPersonPhoneList() {
 		return personPhoneList;
 	}
 
-	public void setPersonPhoneList(ArrayList<PersonPhoneModel> personPhoneList) {
+	public void setPersonPhoneList(List<PersonPhoneModel> personPhoneList) {
 		this.personPhoneList = personPhoneList;
 	}
 
-	public ArrayList<PersonEmailModel> getPersonEmailList() {
+	public List<PersonEmailModel> getPersonEmailList() {
 		return personEmailList;
 	}
 
-	public void setPersonEmailList(ArrayList<PersonEmailModel> personEmailList) {
+	public void setPersonEmailList(List<PersonEmailModel> personEmailList) {
 		this.personEmailList = personEmailList;
 	}
 

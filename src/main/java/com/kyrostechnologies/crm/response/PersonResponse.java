@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ public class PersonResponse {
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("PersonList")
-	private ArrayList<PersonModel>personList=new ArrayList<PersonModel>();
+	private List<PersonModel> personList=new ArrayList<PersonModel>();
 	public PersonResponse(){
 		
 	}
@@ -29,10 +30,10 @@ public class PersonResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<PersonModel> getPersonList() {
+	public List<PersonModel> getPersonList() {
 		return personList;
 	}
-	public void setPersonList(ArrayList<PersonModel> personList) {
+	public void setPersonList(List<PersonModel> personList) {
 		this.personList = personList;
 	}
 	

@@ -4,10 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.personphone")
 public class PersonPhoneModel implements Serializable {
 private static final long serialVersionUID = 1L;
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("PersonPhoneId")
 private int personPhoneId;
 	@JsonProperty("Label")

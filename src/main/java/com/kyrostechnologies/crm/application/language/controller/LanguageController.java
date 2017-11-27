@@ -1,5 +1,6 @@
 package com.kyrostechnologies.crm.application.language.controller;
 
+import com.kyrostechnologies.crm.application.HttpUnauthorizedException;
 import com.kyrostechnologies.crm.application.language.businesstier.LanguageBusinessLogic;
 import com.kyrostechnologies.crm.application.token.InsertTokenClass;
 import com.kyrostechnologies.crm.model.LanguageModel;
@@ -19,7 +20,7 @@ import java.security.InvalidKeyException;
 public class LanguageController {
     @Autowired
     private LanguageBusinessLogic businessLogic;
-
+    @ExceptionHandler({HttpUnauthorizedException.class})
     @RequestMapping(method = RequestMethod.GET,value="/language")
     public @ResponseBody    LanguageResponse getLanguage(){
         return businessLogic.getLanguageList();

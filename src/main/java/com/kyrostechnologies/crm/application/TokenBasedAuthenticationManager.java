@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.NotAuthorizedException;
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 
 public class TokenBasedAuthenticationManager  implements AuthenticationManager {
     @Autowired
@@ -28,7 +29,12 @@ public class TokenBasedAuthenticationManager  implements AuthenticationManager {
 
         }
         if (!authService.isTokenThere(token)) {
-            throw new NotAuthorizedException("invalid token");
+
+           // throw new NotAuthorizedException("Invalid Api Key");
+            throw new org.springframework.security.access.AccessDeniedException("403 returned");
+
+
+
 
         }
 

@@ -2,6 +2,7 @@ package com.kyrostechnologies.crm.application;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -28,8 +31,10 @@ import javax.validation.constraints.NotNull;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     private static final Logger LOG = LoggerFactory.getLogger(SecurityConfig.class);
 
     public static final String X_AUTH_TOKEN = "X-Auth-Token";
@@ -42,8 +47,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
-        return new Http403ForbiddenEntryPoint();
+       // return new RestAuthenticationEntryPoint();
+       return new Http403ForbiddenEntryPoint();
     }
+
     @Bean
     public RequestHeaderAuthenticationFilter requestHeaderAuthenticationFilter(
             final AuthenticationManager authenticationManager) {
@@ -56,6 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         filter.setContinueFilterChainOnUnsuccessfulAuthentication(false);
         return filter;
     }
+
+
+
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         RequestHeaderAuthenticationFilter requestHeaderAuthenticationFilter = fromContext(http,
@@ -73,7 +83,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().securityContext()
                 .and().exceptionHandling()
-                .authenticationEntryPoint(authenticationEntryPoint)
+              .authenticationEntryPoint(authenticationEntryPoint)
+//               .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .accessDeniedHandler(accessDeniedHandler)
                 .and()
 

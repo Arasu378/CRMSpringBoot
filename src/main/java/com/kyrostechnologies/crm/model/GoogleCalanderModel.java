@@ -2,9 +2,13 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.googlecalendar")
 public class GoogleCalanderModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("ConnectionId")
 private int connectionId;
 	@JsonProperty("UserProfileId")

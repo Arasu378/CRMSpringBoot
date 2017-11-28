@@ -2,9 +2,13 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.googlecontacts")
 public class GoogleContactsModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("ContactId")
 private int contactId;
 	@JsonProperty("UserProfileId")

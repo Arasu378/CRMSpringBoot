@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("EmailIntegrationList")
-private ArrayList<EmailIntegrationModel>emailIntegrationList=new ArrayList<EmailIntegrationModel>();
+private List<EmailIntegrationModel> emailIntegrationList=new ArrayList<EmailIntegrationModel>();
 public EmailIntegrationResponse(){
 	
 }
@@ -29,11 +30,11 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<EmailIntegrationModel> getEmailIntegrationList() {
+public List<EmailIntegrationModel> getEmailIntegrationList() {
 	return emailIntegrationList;
 }
 public void setEmailIntegrationList(
-		ArrayList<EmailIntegrationModel> emailIntegrationList) {
+		List<EmailIntegrationModel> emailIntegrationList) {
 	this.emailIntegrationList = emailIntegrationList;
 }
 

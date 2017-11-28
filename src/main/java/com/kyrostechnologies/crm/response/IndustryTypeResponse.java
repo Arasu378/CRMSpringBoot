@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ public class IndustryTypeResponse {
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("IndustryType")
-	private ArrayList<IndustryTypeModel>industryType=new ArrayList<IndustryTypeModel>();
+	private List<IndustryTypeModel> industryType=new ArrayList<IndustryTypeModel>();
 	public IndustryTypeResponse(){
 		
 	}
@@ -29,10 +30,10 @@ public class IndustryTypeResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<IndustryTypeModel> getIndustryType() {
+	public List<IndustryTypeModel> getIndustryType() {
 		return industryType;
 	}
-	public void setIndustryType(ArrayList<IndustryTypeModel> industryType) {
+	public void setIndustryType(List<IndustryTypeModel> industryType) {
 		this.industryType = industryType;
 	}
 	

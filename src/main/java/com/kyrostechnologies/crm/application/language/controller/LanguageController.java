@@ -1,5 +1,6 @@
 package com.kyrostechnologies.crm.application.language.controller;
 
+import com.kyrostechnologies.crm.application.APIUtils;
 import com.kyrostechnologies.crm.application.HttpUnauthorizedException;
 import com.kyrostechnologies.crm.application.language.businesstier.LanguageBusinessLogic;
 import com.kyrostechnologies.crm.application.token.InsertTokenClass;
@@ -21,19 +22,19 @@ public class LanguageController {
     @Autowired
     private LanguageBusinessLogic businessLogic;
     @ExceptionHandler({HttpUnauthorizedException.class})
-    @RequestMapping(method = RequestMethod.GET,value="/language")
+    @RequestMapping(method = RequestMethod.GET,value= APIUtils.LANGUAGE)
     public @ResponseBody    LanguageResponse getLanguage(){
         return businessLogic.getLanguageList();
     }
-    @RequestMapping(method = RequestMethod.POST,value="/language")
+    @RequestMapping(method = RequestMethod.POST,value= APIUtils.LANGUAGE)
     public @ResponseBody    LanguageResponse insertLanguage(@RequestBody LanguageModel model){
         return businessLogic.insertLanguageList(model);
     }
-    @RequestMapping(method = RequestMethod.PUT,value="/language")
+    @RequestMapping(method = RequestMethod.PUT,value= APIUtils.LANGUAGE)
     public @ResponseBody    LanguageResponse updateLanguage(@RequestBody LanguageModel model){
         return businessLogic.updateLanguageList(model);
     }
-    @RequestMapping(method = RequestMethod.DELETE,value="/language")
+    @RequestMapping(method = RequestMethod.DELETE,value= APIUtils.LANGUAGE)
     public @ResponseBody    LanguageResponse deleteLanguage(@RequestBody LanguageModel model){
         return businessLogic.deleteLanguageList(model);
     }

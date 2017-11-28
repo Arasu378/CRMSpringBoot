@@ -2,9 +2,15 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
+import java.io.Serializable;
 
-public class GoogleDriveModel {
+@Entity
+@Table(name="usersettings.googledrive")
+public class GoogleDriveModel implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("DriveId")
 private int driveId;
 	@JsonProperty("UserProfileId")

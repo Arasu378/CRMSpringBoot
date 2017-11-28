@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("GoogleContactList")
-private ArrayList<GoogleContactsModel>googleContactList=new ArrayList<GoogleContactsModel>();
+private List<GoogleContactsModel> googleContactList=new ArrayList<GoogleContactsModel>();
 	public GoogleContactsResponse(){
 		
 	}
@@ -29,11 +30,11 @@ private ArrayList<GoogleContactsModel>googleContactList=new ArrayList<GoogleCont
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<GoogleContactsModel> getGoogleContactList() {
+	public List<GoogleContactsModel> getGoogleContactList() {
 		return googleContactList;
 	}
 	public void setGoogleContactList(
-			ArrayList<GoogleContactsModel> googleContactList) {
+			List<GoogleContactsModel> googleContactList) {
 		this.googleContactList = googleContactList;
 	}
 	

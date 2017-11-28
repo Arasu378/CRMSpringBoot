@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("GoogleDriveList")
-private ArrayList<GoogleDriveModel>googleDriveList=new ArrayList<GoogleDriveModel>();
+private List<GoogleDriveModel> googleDriveList=new ArrayList<GoogleDriveModel>();
 	public GoogleDriveResponse(){
 		
 	}
@@ -29,10 +30,10 @@ private ArrayList<GoogleDriveModel>googleDriveList=new ArrayList<GoogleDriveMode
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<GoogleDriveModel> getGoogleDriveList() {
+	public List<GoogleDriveModel> getGoogleDriveList() {
 		return googleDriveList;
 	}
-	public void setGoogleDriveList(ArrayList<GoogleDriveModel> googleDriveList) {
+	public void setGoogleDriveList(List<GoogleDriveModel> googleDriveList) {
 		this.googleDriveList = googleDriveList;
 	}
 	

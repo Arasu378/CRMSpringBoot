@@ -1,4 +1,4 @@
-package com.kyrostechnologies.crm.application.pipeline;
+package com.kyrostechnologies.crm.application.pipeline.interfaceclass;
 
 import com.kyrostechnologies.crm.model.PipeLineModel;
 import com.kyrostechnologies.crm.response.PipeLineResponse;

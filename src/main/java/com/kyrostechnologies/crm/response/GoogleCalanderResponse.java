@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("GoogleCalanderList")
-private ArrayList<GoogleCalanderModel>googleCalanderList=new ArrayList<GoogleCalanderModel>();
+private List<GoogleCalanderModel> googleCalanderList=new ArrayList<GoogleCalanderModel>();
 public GoogleCalanderResponse(){
 	
 }
@@ -29,11 +30,11 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<GoogleCalanderModel> getGoogleCalanderList() {
+public List<GoogleCalanderModel> getGoogleCalanderList() {
 	return googleCalanderList;
 }
 public void setGoogleCalanderList(
-		ArrayList<GoogleCalanderModel> googleCalanderList) {
+		List<GoogleCalanderModel> googleCalanderList) {
 	this.googleCalanderList = googleCalanderList;
 }
 

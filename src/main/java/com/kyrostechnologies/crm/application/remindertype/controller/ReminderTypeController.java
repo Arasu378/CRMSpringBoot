@@ -1,5 +1,6 @@
 package com.kyrostechnologies.crm.application.remindertype.controller;
 
+import com.kyrostechnologies.crm.application.APIUtils;
 import com.kyrostechnologies.crm.application.remindertype.businesstier.ReminderTypeBussinessLogic;
 import com.kyrostechnologies.crm.model.ReminderTypeModel;
 import com.kyrostechnologies.crm.response.LanguageResponse;
@@ -15,22 +16,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ReminderTypeController {
     @Autowired
     private ReminderTypeBussinessLogic bussinessLogic;
-    @RequestMapping(method = RequestMethod.GET,value="/reminderType")
+    @RequestMapping(method = RequestMethod.GET,value= APIUtils.REMINDER_TYPE)
     public @ResponseBody
     ReminderTypeResponse getReminderType(){
         return bussinessLogic.getReminderType();
     }
-    @RequestMapping(method = RequestMethod.POST,value="/reminderType")
+    @RequestMapping(method = RequestMethod.POST,value=APIUtils.REMINDER_TYPE)
     public @ResponseBody
     ReminderTypeResponse insertReminderType(@RequestBody ReminderTypeModel model){
         return bussinessLogic.insertReminderType(model);
     }
-    @RequestMapping(method = RequestMethod.PUT,value="/reminderType")
+    @RequestMapping(method = RequestMethod.PUT,value=APIUtils.REMINDER_TYPE)
     public @ResponseBody
     ReminderTypeResponse updateReminderType(@RequestBody ReminderTypeModel model){
         return bussinessLogic.updateReminderType(model);
     }
-    @RequestMapping(method = RequestMethod.DELETE,value="/reminderType")
+    @RequestMapping(method = RequestMethod.DELETE,value=APIUtils.REMINDER_TYPE)
     public @ResponseBody
     ReminderTypeResponse deleteReminderType(@RequestBody ReminderTypeModel model){
         return bussinessLogic.deleteReminderType(model);

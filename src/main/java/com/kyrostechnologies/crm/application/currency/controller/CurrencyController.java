@@ -1,5 +1,6 @@
 package com.kyrostechnologies.crm.application.currency.controller;
 
+import com.kyrostechnologies.crm.application.APIUtils;
 import com.kyrostechnologies.crm.application.currency.businesstier.CurrencyBussinessLogic;
 import com.kyrostechnologies.crm.application.currency.datatier.CurrencyDataTier;
 import com.kyrostechnologies.crm.model.CurrencyModel;
@@ -17,19 +18,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CurrencyController{
     @Autowired
     private CurrencyBussinessLogic bussinessLogic;
-    @RequestMapping(method = RequestMethod.GET,value="/currency")
+    @RequestMapping(method = RequestMethod.GET,value= APIUtils.CURRENCY)
     public @ResponseBody CurrencyResponse getCurrency(){
         return bussinessLogic.getCurrencyList();
     }
-    @RequestMapping(method = RequestMethod.POST,value="/currency")
+    @RequestMapping(method = RequestMethod.POST,value=APIUtils.CURRENCY)
     public @ResponseBody CurrencyResponse insertCurrency(@RequestBody CurrencyModel model){
         return bussinessLogic.insertCurrencyList(model);
     }
-    @RequestMapping(method = RequestMethod.PUT,value="/currency")
+    @RequestMapping(method = RequestMethod.PUT,value=APIUtils.CURRENCY)
     public @ResponseBody CurrencyResponse updateCurrency(@RequestBody CurrencyModel model){
         return bussinessLogic.updateCurrencyList(model);
     }
-    @RequestMapping(method = RequestMethod.DELETE,value="/currency")
+    @RequestMapping(method = RequestMethod.DELETE,value=APIUtils.CURRENCY)
     public @ResponseBody CurrencyResponse deleteCurrency(@RequestBody CurrencyModel model){
         return bussinessLogic.deleteCurrencyList(model);
     }

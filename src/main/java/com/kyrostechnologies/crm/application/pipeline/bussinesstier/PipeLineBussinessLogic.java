@@ -1,6 +1,6 @@
 package com.kyrostechnologies.crm.application.pipeline.bussinesstier;
 
-import com.kyrostechnologies.crm.application.pipeline.PipeLineInterface;
+import com.kyrostechnologies.crm.application.pipeline.interfaceclass.PipeLineInterface;
 import com.kyrostechnologies.crm.application.pipeline.datatier.PipeLineDataTier;
 import com.kyrostechnologies.crm.model.PipeLineModel;
 import com.kyrostechnologies.crm.response.PipeLineResponse;

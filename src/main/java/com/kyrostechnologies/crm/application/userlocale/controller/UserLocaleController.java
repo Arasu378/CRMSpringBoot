@@ -1,5 +1,6 @@
 package com.kyrostechnologies.crm.application.userlocale.controller;
 
+import com.kyrostechnologies.crm.application.APIUtils;
 import com.kyrostechnologies.crm.application.language.businesstier.LanguageBusinessLogic;
 import com.kyrostechnologies.crm.application.userlocale.bussinesstier.UserLocaleBussinessLogic;
 import com.kyrostechnologies.crm.model.UserLocaleModel;
@@ -17,22 +18,22 @@ import sun.misc.Contended;
 public class UserLocaleController {
     @Autowired
     private UserLocaleBussinessLogic businessLogic;
-    @RequestMapping(method = RequestMethod.GET,value="/userLocale")
+    @RequestMapping(method = RequestMethod.GET,value= APIUtils.USER_LOCALE)
     public @ResponseBody
     UserLocaleResponse getUserLocale(){
         return businessLogic.getUserLocale();
     }
-    @RequestMapping(method = RequestMethod.POST,value="/userLocale")
+    @RequestMapping(method = RequestMethod.POST,value=APIUtils.USER_LOCALE)
     public @ResponseBody
     UserLocaleResponse insertUserLocale(@RequestBody UserLocaleModel model){
         return businessLogic.insertUserLocale(model);
     }
-    @RequestMapping(method = RequestMethod.PUT,value="/userLocale")
+    @RequestMapping(method = RequestMethod.PUT,value=APIUtils.USER_LOCALE)
     public @ResponseBody
     UserLocaleResponse updateUserLocale(@RequestBody UserLocaleModel model){
         return businessLogic.updateUserLocale(model);
     }
-    @RequestMapping(method = RequestMethod.DELETE,value="/userLocale")
+    @RequestMapping(method = RequestMethod.DELETE,value=APIUtils.USER_LOCALE)
     public @ResponseBody
     UserLocaleResponse deleteUserLocale(@RequestBody UserLocaleModel model){
         return businessLogic.deleteUserLocale(model);

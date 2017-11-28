@@ -4,11 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.files")
 public class FilesModel implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("FileId")
 	private int fileId;
 	@JsonProperty("UserProfileId")

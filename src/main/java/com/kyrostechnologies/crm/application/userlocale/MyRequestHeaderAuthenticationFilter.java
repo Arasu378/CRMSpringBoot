@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class MyRequestHeaderAuthenticationFilter extends RequestHeaderAuthenticationFilter {
-    private String AUTHORIZATION="Authorization";
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
@@ -22,6 +21,7 @@ public class MyRequestHeaderAuthenticationFilter extends RequestHeaderAuthentica
 
     @Override
     protected Object getPreAuthenticatedPrincipal(HttpServletRequest request) {
+        String AUTHORIZATION = "Authorization";
         String token=request.getHeader(AUTHORIZATION);
         if(token==null){
            // request.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

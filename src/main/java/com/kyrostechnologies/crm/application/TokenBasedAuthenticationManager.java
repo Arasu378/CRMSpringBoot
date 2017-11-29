@@ -17,6 +17,7 @@ import javax.ws.rs.NotAuthorizedException;
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
 
+@SuppressWarnings("SpringJavaAutowiredMembersInspection")
 public class TokenBasedAuthenticationManager  implements AuthenticationManager {
     @Autowired
     private InsertTokenClass authService;

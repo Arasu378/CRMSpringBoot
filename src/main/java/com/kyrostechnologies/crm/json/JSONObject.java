@@ -95,6 +95,7 @@ import java.util.Set;
  * @author JSON.org
  * @version 2016-08-15
  */
+@SuppressWarnings("FinalStaticMethod")
 public class JSONObject {
     /**
      * JSONObject.NULL is equivalent to the value that JavaScript calls null,

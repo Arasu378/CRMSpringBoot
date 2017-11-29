@@ -2,9 +2,13 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="usersettings.company")
 public class CompanyModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("CompanyId")
 private int companyId;
 	@JsonProperty("UserProfileId")

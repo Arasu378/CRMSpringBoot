@@ -1,13 +1,18 @@
 package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.TypeAlias;
 
 import java.io.Serializable;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="salescrm.attachment")
 public class AttachmentModel implements Serializable{
 	private static final long serialVersionUID = 1L;
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("AttachmentId")
 	private int attachmentId;
 	@JsonProperty("AttachmentFileName")

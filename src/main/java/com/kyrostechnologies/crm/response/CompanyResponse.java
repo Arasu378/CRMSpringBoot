@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.kyrostechnologies.crm.model.CompanyModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -14,7 +15,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("CompanyList")
-private ArrayList<CompanyModel>companyList=new ArrayList<CompanyModel>();
+private List<CompanyModel> companyList=new ArrayList<CompanyModel>();
 public CompanyResponse(){
 	
 }
@@ -30,10 +31,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<CompanyModel> getCompanyList() {
+public List<CompanyModel> getCompanyList() {
 	return companyList;
 }
-public void setCompanyList(ArrayList<CompanyModel> companyList) {
+public void setCompanyList(List<CompanyModel> companyList) {
 	this.companyList = companyList;
 }
 

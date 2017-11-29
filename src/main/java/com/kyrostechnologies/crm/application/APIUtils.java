@@ -1,5 +1,4 @@
 package com.kyrostechnologies.crm.application;
-
 public class APIUtils {
     public static final String USER_LOCALE="/userLocale";
     public static final String USER_INTERFACE_BY_USER_INTERFACE_ID="/userInterfaceByUserInterfaceId/{UserInterfaceId}";
@@ -50,4 +49,19 @@ public class APIUtils {
     public static final String DEAL_BY_USER_PROFILE_ID="/dealsByUserProfileId/{UserProfileId}";
     public static final String DEAL_BY_DEAL_ID="/dealsByDealId/{DealId}";
     public static final String DEALS="/deals";
+    public static final String CONNECTIONS_BY_USER_PROFILE_ID="/connectionsByUserProfileId/{UserProfileId}";
+    public static final String CONNECTIONS_BY_CONNECTION_ID="/connectionsByConnectionId/{ConnectionId}";
+    public static final String CONNECTIONS="/connections";
+    public static final String COMPANY_BY_USER_PROFILE_ID="/companyByUserProfileId/{UserProfileId}";
+    public static final String COMPANY_BY_COMPANY_ID="/companyByCompanyId/{CompanyId}";
+    public static final String COMPANY="/company";
+    public static final String PICTURE_URL="http://localhost:8080/attachmentPicture/";
+    public static final String ATTACHMENT_BY_ATTACHMENT_ID="/attachmentByAttachmentId/{AttachmentId}";
+    public static final String ATTACHMENT_PICTURE_BY_ATTACHMENT_ID="/attachmentPictureByAttachmentId";
+    public static final String ATTACHMENTS="/attachments";
+    public static final String ACITIVITY_TYPE="/activityType";
+    public static final String ACITIVITY_TYPE_BY_USER_PROFILE_ID="/activityTypeByUserProfileId/{UserProfileId}";
+    public static final String ACTIVITY_BY_USER_PROFILE_ID="/activityByUserProfileId/{UserProfileId}";
+    public static final String ACTIVITY_BY_ACTIVITY_ID="/activityByActivityId/{ActivityId}";
+    public static final String ACTIVITY="/activity";
 }

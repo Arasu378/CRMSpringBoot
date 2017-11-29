@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ private boolean isSuccess;
 	@JsonProperty("Message")
 private String message;
 	@JsonProperty("ConnectionList")
-private ArrayList<ConnectionsModel>connectionList=new ArrayList<ConnectionsModel>();
+private List<ConnectionsModel> connectionList=new ArrayList<ConnectionsModel>();
 public ConnectionsResponse(){
 	
 }
@@ -29,10 +30,10 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public ArrayList<ConnectionsModel> getConnectionList() {
+public List<ConnectionsModel> getConnectionList() {
 	return connectionList;
 }
-public void setConnectionList(ArrayList<ConnectionsModel> connectionList) {
+public void setConnectionList(List<ConnectionsModel> connectionList) {
 	this.connectionList = connectionList;
 }
 

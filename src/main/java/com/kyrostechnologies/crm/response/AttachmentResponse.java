@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -13,7 +14,7 @@ public class AttachmentResponse {
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("AttachmentList")
-	private ArrayList<AttachmentModel>attachmentList=new ArrayList<AttachmentModel>();
+	private List<AttachmentModel> attachmentList=new ArrayList<AttachmentModel>();
 	public AttachmentResponse(){
 		
 	}
@@ -29,10 +30,10 @@ public class AttachmentResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<AttachmentModel> getAttachmentList() {
+	public List<AttachmentModel> getAttachmentList() {
 		return attachmentList;
 	}
-	public void setAttachmentList(ArrayList<AttachmentModel> attachmentList) {
+	public void setAttachmentList(List<AttachmentModel> attachmentList) {
 		this.attachmentList = attachmentList;
 	}
 	

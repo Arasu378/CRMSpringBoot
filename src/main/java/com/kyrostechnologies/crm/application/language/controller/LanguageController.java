@@ -1,27 +1,18 @@
 package com.kyrostechnologies.crm.application.language.controller;
 
 import com.kyrostechnologies.crm.application.APIUtils;
-import com.kyrostechnologies.crm.application.HttpUnauthorizedException;
 import com.kyrostechnologies.crm.application.language.businesstier.LanguageBusinessLogic;
-import com.kyrostechnologies.crm.application.token.InsertTokenClass;
 import com.kyrostechnologies.crm.model.LanguageModel;
 import com.kyrostechnologies.crm.response.LanguageResponse;
-import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.NotAuthorizedException;
-import java.nio.file.AccessDeniedException;
-import java.security.InvalidKeyException;
 
 @Controller
 //@CrossOrigin(origins="*")
 public class LanguageController {
     @Autowired
     private LanguageBusinessLogic businessLogic;
-    @ExceptionHandler({HttpUnauthorizedException.class})
     @RequestMapping(method = RequestMethod.GET,value= APIUtils.LANGUAGE)
     public @ResponseBody    LanguageResponse getLanguage(){
         return businessLogic.getLanguageList();

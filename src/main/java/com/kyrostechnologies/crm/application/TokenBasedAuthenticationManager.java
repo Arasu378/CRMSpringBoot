@@ -31,9 +31,9 @@ public class TokenBasedAuthenticationManager  implements AuthenticationManager {
         }
         if (!authService.isTokenThere(token)) {
 
-           // throw new NotAuthorizedException("Invalid Api Key");
-            throw new org.springframework.security.access.AccessDeniedException("403 returned");
 
+           // throw new NotAuthorizedException("Invalid Api Key");
+           throw new org.springframework.security.access.AccessDeniedException("403 returned");
 
 
 

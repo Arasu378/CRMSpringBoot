@@ -24,6 +24,7 @@ import org.springframework.security.web.authentication.Http403ForbiddenEntryPoin
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.security.web.authentication.preauth.RequestHeaderAuthenticationFilter;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
@@ -37,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final Logger LOG = LoggerFactory.getLogger(SecurityConfig.class);
 
-    public static final String X_AUTH_TOKEN = "X-Auth-Token";
+    public static final String X_AUTH_TOKEN = "Authorization";
 
     private AccessDeniedHandler accessDeniedHandler = new AccessDeniedHandlerImpl();
 

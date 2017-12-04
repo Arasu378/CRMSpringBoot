@@ -2,9 +2,13 @@ package com.kyrostechnologies.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
-
+@Entity
+@Table(name="company.userprofile")
 public class LoginModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonProperty("UserEmail")
 	private String userEmail;
 	@JsonProperty("Password")

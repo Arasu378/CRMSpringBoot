@@ -64,4 +64,7 @@ public class APIUtils {
     public static final String ACTIVITY_BY_USER_PROFILE_ID="/activityByUserProfileId/{UserProfileId}";
     public static final String ACTIVITY_BY_ACTIVITY_ID="/activityByActivityId/{ActivityId}";
     public static final String ACTIVITY="/activity";
+    public static final String LOGIN="/login";
+    public static final String REGISTRATION="/registration";
+    public static final String REGISTRATION_MORE_DETAILS="/registrationMoreDetails";
 }

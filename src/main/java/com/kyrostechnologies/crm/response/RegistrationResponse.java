@@ -1,6 +1,7 @@
 package com.kyrostechnologies.crm.response;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -15,13 +16,24 @@ public class RegistrationResponse {
 	@JsonProperty("Message")
 	private String message;
 	@JsonProperty("RegistrationList")
-	private ArrayList<RegistrationModel>registrationList=new ArrayList<RegistrationModel>();
+	private List<RegistrationModel>registrationList=new ArrayList<RegistrationModel>();
 	@JsonProperty("LoginModel")
-private ArrayList<LoginModel>loginModel=new ArrayList<LoginModel>();
+private List<LoginModel> loginModel=new ArrayList<LoginModel>();
+	@XmlElement(name="Login")
+	private LoginResponse login;
 	public RegistrationResponse(){
 		
 	}
-	public boolean getIsSuccess() {
+
+    public LoginResponse getLogin() {
+        return login;
+    }
+
+    public void setLogin(LoginResponse login) {
+        this.login = login;
+    }
+
+    public boolean getIsSuccess() {
 		return isSuccess;
 	}
 	public void setIsSuccess(boolean isSuccess) {
@@ -33,16 +45,16 @@ private ArrayList<LoginModel>loginModel=new ArrayList<LoginModel>();
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public ArrayList<RegistrationModel> getRegistrationList() {
+	public List<RegistrationModel> getRegistrationList() {
 		return registrationList;
 	}
-	public void setRegistrationList(ArrayList<RegistrationModel> registrationList) {
+	public void setRegistrationList(List<RegistrationModel> registrationList) {
 		this.registrationList = registrationList;
 	}
-	public ArrayList<LoginModel> getLoginModel() {
+	public List<LoginModel> getLoginModel() {
 		return loginModel;
 	}
-	public void setLoginModel(ArrayList<LoginModel> loginModel) {
+	public void setLoginModel(List<LoginModel> loginModel) {
 		this.loginModel = loginModel;
 	}
 	

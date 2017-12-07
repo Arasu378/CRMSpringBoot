@@ -59,8 +59,8 @@ public class APIUtils {
     public static final String ATTACHMENT_BY_ATTACHMENT_ID="/attachmentByAttachmentId/{AttachmentId}";
     public static final String ATTACHMENT_PICTURE_BY_ATTACHMENT_ID="/attachmentPictureByAttachmentId";
     public static final String ATTACHMENTS="/attachments";
-    public static final String ACITIVITY_TYPE="/activityType";
-    public static final String ACITIVITY_TYPE_BY_USER_PROFILE_ID="/activityTypeByUserProfileId/{UserProfileId}";
+    public static final String ACTIVITY_TYPE="/activityType";
+    public static final String ACTIVITY_TYPE_BY_USER_PROFILE_ID="/activityTypeByUserProfileId/{UserProfileId}";
     public static final String ACTIVITY_BY_USER_PROFILE_ID="/activityByUserProfileId/{UserProfileId}";
     public static final String ACTIVITY_BY_ACTIVITY_ID="/activityByActivityId/{ActivityId}";
     public static final String ACTIVITY="/activity";

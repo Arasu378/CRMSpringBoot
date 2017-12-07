@@ -12,27 +12,27 @@ import org.springframework.web.bind.annotation.*;
 public class ActivityTypeController {
     @Autowired
     private ActivityTypeBussinessLogic bussinessLogic;
-    @RequestMapping(method = RequestMethod.GET ,value = APIUtils.ACITIVITY_TYPE)
+    @RequestMapping(method = RequestMethod.GET ,value = APIUtils.ACTIVITY_TYPE)
     public @ResponseBody
     ActivityTypeResponse getActivityType(){
         return bussinessLogic.getActivityType();
     }
-    @RequestMapping(method = RequestMethod.GET ,value = APIUtils.ACITIVITY_TYPE_BY_USER_PROFILE_ID)
+    @RequestMapping(method = RequestMethod.GET ,value = APIUtils.ACTIVITY_TYPE_BY_USER_PROFILE_ID)
     public @ResponseBody
     ActivityTypeResponse getActivityTypeByUserProfileId(@PathVariable("UserProfileId")int UserProfileId){
         return bussinessLogic.getActivityTypeByUserProfileId(UserProfileId);
     }
-    @RequestMapping(method = RequestMethod.POST ,value = APIUtils.ACITIVITY_TYPE)
+    @RequestMapping(method = RequestMethod.POST ,value = APIUtils.ACTIVITY_TYPE)
     public @ResponseBody
     ActivityTypeResponse insertActivityType(@RequestBody ActivityTypeModel model){
         return bussinessLogic.insertActivityType(model);
     }
-    @RequestMapping(method = RequestMethod.PUT ,value = APIUtils.ACITIVITY_TYPE)
+    @RequestMapping(method = RequestMethod.PUT ,value = APIUtils.ACTIVITY_TYPE)
     public @ResponseBody
     ActivityTypeResponse updateActivityType(@RequestBody ActivityTypeModel model){
         return bussinessLogic.updateActivityType(model);
     }
-    @RequestMapping(method = RequestMethod.DELETE ,value = APIUtils.ACITIVITY_TYPE)
+    @RequestMapping(method = RequestMethod.DELETE ,value = APIUtils.ACTIVITY_TYPE)
     public @ResponseBody
     ActivityTypeResponse deleteActivityType(@RequestBody ActivityTypeModel model){
         return bussinessLogic.deleteActivityType(model);
